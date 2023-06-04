@@ -8,7 +8,6 @@ import 'react-native-gesture-handler';
 import BottomNavBar from './components/BottomNavBar';
 import WelcomeScreen from './screen/WelcomeScreen';
 import HomeScreen from './screen/HomeScreen';
-import CategoriesScreen from './screen/CategoriesScreen';
 import RecommendationScreen from './screen/RecommendationScreen';
 import RecipeDetail from './screen/RecipeDetail';
 import FavoritesScreen from './screen/FavoritesScreen';
@@ -22,8 +21,8 @@ const Tab = createBottomTabNavigator();
 const HomeTabs = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomNavBar {...props} />}>
-      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Recommendations" component={RecommendationScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Favorite" component={FavoritesScreen} />
     </Tab.Navigator>
   );

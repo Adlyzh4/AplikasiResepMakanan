@@ -20,17 +20,17 @@ const BottomNavBar = () => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={navigateToHomeScreen} style={styles.tab}>
-        <Icon name='home-outline' size={24} color='#6c757d' />
-        <Text style={styles.tabTitle}>Beranda</Text>
-      </TouchableOpacity>
       <TouchableOpacity onPress={navigateToRecommendations} style={styles.tab}>
-        <Icon name='restaurant-outline' size={24} color='#6c757d' />
-        <Text style={styles.tabTitle}>Rekomendasi</Text>
+        <Icon name="restaurant-outline" size={24} color="#6c757d" />
+        <Text style={styles.tabTitle}>Recommendations</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={navigateToHomeScreen} style={styles.tab}>
+        <Icon name="search-outline" size={24} color="#6c757d" />
+        <Text style={styles.tabTitle}>Search</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={navigateToCategories} style={styles.tab}>
-        <Icon name='grid-outline' size={24} color='#6c757d' />
-        <Text style={styles.tabTitle}>Favorit</Text>
+        <Icon name="grid-outline" size={24} color="#6c757d" />
+        <Text style={styles.tabTitle}>Favorites</Text>
       </TouchableOpacity>
     </View>
   );
@@ -39,17 +39,19 @@ const BottomNavBar = () => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     height: 70,
     paddingHorizontal: 20,
     backgroundColor: '#fff',
     borderTopWidth: 1,
     borderTopColor: '#e0e0e0',
+    elevation: 8, // Add elevation for a shadow effect (Android)
   },
   tab: {
     justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
   },
   tabTitle: {
     marginTop: 5,

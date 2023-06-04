@@ -32,15 +32,15 @@ const Home = (props) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Resep Makanan</Text> 
+      <Text style={styles.header}>Search Recipes</Text> 
       <View style={styles.searchContainer}> 
         <TextInput
           style={styles.searchInput}
-          placeholder="Cari Resep"
+          placeholder="Search Recipes"
           onChangeText={text => setSearchText(text)}
         />
         <TouchableOpacity style={styles.searchButton} onPress={() => fetchRecipes()}> 
-          <Text style={styles.searchButtonText}>Cari</Text>
+          <Text style={styles.searchButtonText}>Search</Text>
         </TouchableOpacity>
       </View>
       <FlatList

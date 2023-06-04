@@ -18,6 +18,7 @@ const WelcomeScreen = ({ navigation }) => {
           <TouchableOpacity style={styles.button} onPress={handlePress}>
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
+          <Text style={styles.copyright}>© Copyright 2023 by AhmadDiaz</Text>
         </View>
       </ImageBackground>
     </View>
@@ -59,6 +60,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#000000',
+  },
+  copyright: {
+    fontSize: 10,
+    color: 'white',
+    marginTop: 20,
   },
 });
 

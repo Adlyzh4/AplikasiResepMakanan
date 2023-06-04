@@ -56,7 +56,12 @@ const CategoriesScreen = ({ navigation }) => {
   }, [selectedIngredient]); // Efek hanya akan dijalankan kembali jika pilihan berubah
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
+      <Image
+        source={require('../images/book.jpg')}
+        style={styles.welcomeImage}
+      />
+
       <Text style={styles.title}>Select Ingredient</Text> 
       <ScrollView horizontal={true} style={styles.ingredientsContainer}>
         <TouchableOpacity
@@ -122,7 +127,7 @@ const CategoriesScreen = ({ navigation }) => {
           </TouchableOpacity>
         ))}
       </ScrollView>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -172,6 +177,16 @@ const styles = StyleSheet.create({
   },
   recommendationsContainer: {
     marginBottom: 0,
+  },
+  welcomeImage: {
+    width: '100%',
+    height: 120,
+    resizeMode: 'contain',
+    marginBottom: 10,
+    borderRadius: 5,
+  },
+  scrollContent: {
+    paddingBottom: 50,
   },
 });
 
