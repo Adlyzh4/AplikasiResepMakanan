@@ -14,7 +14,7 @@ const WelcomeScreen = ({ navigation }) => {
         source={require('../images/WelcomeScreen.jpg')}
       >
         <View style={styles.overlay}>
-          <Text style={styles.title}>Welcome to Recipe Haven!</Text>
+          <Text style={styles.title}>Welcome to RecipeHeaven!</Text>
           <TouchableOpacity style={styles.button} onPress={handlePress}>
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
