@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, TextInput, } from 'react-native';
 
 const Home = (props) => {
-  const [recipes, setRecipes] = useState([]); // variabel yang akan menampilkan resep
-  const [searchText, setSearchText] = useState(''); // variabel input search ketika di isi menampilkan resep
-  const [idRecipe, setIdRecipe] = useState(); // variabel yang akan menampilkan resep makanan sesuai ID
+  const [recipes, setRecipes] = useState([]); 
+  const [searchText, setSearchText] = useState(''); 
+  const [idRecipe, setIdRecipe] = useState(); 
 
   const fetchRecipes = async () => {
     const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=4649e4f0795a4e9d8edb30434f706b2b&query=${searchText}`);
     const data = await response.json();
-    setRecipes(data.results); // simpan data resep ketika berhasil permintaan API ke server
+    setRecipes(data.results); 
   }
 
   const resep = (item) => {
@@ -18,7 +18,7 @@ const Home = (props) => {
   }
 
   useEffect(() => {
-    fetchRecipes(); // efek setelah render API selesai ambil resep pencarian
+    fetchRecipes(); 
   }, [searchText]);
 
   const renderRecipe = ({ item }) => {

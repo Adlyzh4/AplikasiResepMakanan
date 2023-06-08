@@ -7,9 +7,9 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'; // library untuk menambahkan icon menarik
+import Icon from 'react-native-vector-icons/FontAwesome'; 
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavoriteRecipe, removeFavoriteRecipe } from '../reducers/favoriteRecipesSlice'; // import sebuah variabel dari halaman recipeslice untuk tombol menambahkan dan menghapus favorit
+import { addFavoriteRecipe, removeFavoriteRecipe } from '../reducers/favoriteRecipesSlice'; 
 
 const RecipeDetail = (props) => {
   const { recipeId } = props.route.params;
@@ -19,7 +19,7 @@ const RecipeDetail = (props) => {
 
   const isFavorite = favoriteRecipes.some(favoriteRecipe => favoriteRecipe.id === recipeId);
 
-  const handleToggleFavorite = () => { // function untuk tombol tambahkan dan menghapus dari favorit
+  const handleToggleFavorite = () => { 
     if (isFavorite) {
       dispatch(removeFavoriteRecipe(recipeDetail.id));
     } else {
@@ -30,14 +30,14 @@ const RecipeDetail = (props) => {
   const fetchRecipeDetail = async () => {
     const response = await fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=4649e4f0795a4e9d8edb30434f706b2b`);
     const data = await response.json();
-    setRecipeDetail(data); // simpan data resep ketika permintaan API ke server
+    setRecipeDetail(data); 
   }
 
   useEffect(() => {
     fetchRecipeDetail();
   }, []);
 
-  if (!recipeDetail) { // Jika resep detail masih memuat atau belum muncul akan menampilkan sebuah loading
+  if (!recipeDetail) { 
     return (
       <View style={styles.container}>
         <Text style={styles.loading}>Loading...</Text>

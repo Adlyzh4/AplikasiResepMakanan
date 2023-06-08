@@ -14,7 +14,7 @@ const WelcomeScreen = ({ navigation }) => {
         source={require('../images/WelcomeScreen.jpg')}
       >
         <View style={styles.overlay}>
-          <Text style={styles.title}>Welcome to My Recipes!</Text>
+          <Text style={styles.title}>Welcome to Recipe Haven!</Text>
           <TouchableOpacity style={styles.button} onPress={handlePress}>
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: 'white',
-    marginBottom: 40,
+    marginBottom: 20,
     textAlign: 'center',
   },
   button: {

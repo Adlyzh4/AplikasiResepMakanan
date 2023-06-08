@@ -7,17 +7,17 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import axios from 'axios'; // Library untuk membantu permintaan API ke server
+import axios from 'axios'; 
 
-const API_KEY = '4649e4f0795a4e9d8edb30434f706b2b'; // Kunci API 
+const API_KEY = '4649e4f0795a4e9d8edb30434f706b2b';  
 
 const CategoriesScreen = ({ navigation }) => {
-  const [ingredients, setIngredients] = useState([]); // variabel yang akan menampilkan data resep yang sudah di simpan
-  const [selectedIngredient, setSelectedIngredient] = useState('Chicken'); // variabel tombol yang akan menampilkan resep sesuai bahan
-  const [recommendations, setRecommendations] = useState([]); // variabel yang akan menampilkan resep rekomendasi
+  const [ingredients, setIngredients] = useState([]); 
+  const [selectedIngredient, setSelectedIngredient] = useState('Chicken'); 
+  const [recommendations, setRecommendations] = useState([]); 
 
   useEffect(() => {
-    fetchRecommendations(); // Efek setelah setiap render API selesai ambil resep rekomendasi
+    fetchRecommendations(); 
   }, []);
 
   const fetchIngredients = async () => {
@@ -25,7 +25,7 @@ const CategoriesScreen = ({ navigation }) => {
       const response = await axios.get(
         `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${selectedIngredient}&apiKey=${API_KEY}`
       );
-      setIngredients(response.data); // Jika berhasil simpan data resep sesuai bahan yang akan di tampilkan
+      setIngredients(response.data); 
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +36,7 @@ const CategoriesScreen = ({ navigation }) => {
       const response = await axios.get(
         `https://api.spoonacular.com/recipes/random?number=5&apiKey=${API_KEY}`
       );
-      setRecommendations(response.data.recipes); // Jika berhasil simpan data resep rekomendasi yang akan di tampilkan
+      setRecommendations(response.data.recipes); 
     } catch (error) {
       console.log(error);
     }
@@ -44,16 +44,16 @@ const CategoriesScreen = ({ navigation }) => {
 
   const navigateToRecipeDetail = (recipeId) => {
     navigation.navigate('RecipeDetail', { recipeId });
-  }; // Pindah halaman ke halaman RecipeDetail
+  }; 
 
   const handleIngredientSelect = (ingredient) => {
     setSelectedIngredient(ingredient);
-    fetchIngredients(); // Ambil resep kategori ketika bahan di klik
+    fetchIngredients(); 
   };
 
   useEffect(() => {
-    fetchIngredients(); // Ambil resep kategori saat komponen terpasang
-  }, [selectedIngredient]); // Efek hanya akan dijalankan kembali jika pilihan berubah
+    fetchIngredients(); 
+  }, [selectedIngredient]); 
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
