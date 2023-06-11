@@ -11,6 +11,7 @@ import HomeScreen from './screen/HomeScreen';
 import RecommendationScreen from './screen/RecommendationScreen';
 import RecipeDetail from './screen/RecipeDetail';
 import FavoritesScreen from './screen/FavoritesScreen';
+import ProfileScreen from './screen/ProfileScreen';
 import store from './store';
 
 
@@ -21,9 +22,10 @@ const Tab = createBottomTabNavigator();
 const HomeTabs = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomNavBar {...props} />}>
-      <Tab.Screen name="Recommendations" component={RecommendationScreen} />
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={RecommendationScreen} />
+      <Tab.Screen name="Search" component={HomeScreen} />
       <Tab.Screen name="Favorite" component={FavoritesScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 };

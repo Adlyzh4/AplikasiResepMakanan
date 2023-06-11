@@ -7,22 +7,26 @@ const BottomNavBar = () => {
   const navigation = useNavigation();
 
   const navigateToHomeScreen = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Search');
   };
 
   const navigateToRecommendations = () => {
-    navigation.navigate('Recommendations');
+    navigation.navigate('Home');
   };
 
   const navigateToCategories = () => {
     navigation.navigate('Favorite');
+  };
+  
+  const navigateToProfile = () => {
+    navigation.navigate('Profile');
   };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={navigateToRecommendations} style={styles.tab}>
         <Icon name="restaurant-outline" size={24} color="#6c757d" />
-        <Text style={styles.tabTitle}>Recommendations</Text>
+        <Text style={styles.tabTitle}>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={navigateToHomeScreen} style={styles.tab}>
         <Icon name="search-outline" size={24} color="#6c757d" />
@@ -31,6 +35,10 @@ const BottomNavBar = () => {
       <TouchableOpacity onPress={navigateToCategories} style={styles.tab}>
         <Icon name="grid-outline" size={24} color="#6c757d" />
         <Text style={styles.tabTitle}>Favorites</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={navigateToProfile} style={styles.tab}>
+        <Icon name="person-outline" size={24} color="#6c757d" />
+        <Text style={styles.tabTitle}>Profile</Text>
       </TouchableOpacity>
     </View>
   );
